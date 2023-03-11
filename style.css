@@ -1,0 +1,269 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-black.woff2);
+	font-weight: 900;
+}
+body {
+	background-color: #010101;
+	font-family: raleway_f, sans-serif;
+	line-height: 1.55;
+}
+.main-header {
+	position: relative;
+}
+
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(./img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.8);
+}
+
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	z-index: 1;
+	transition: var(--transition);
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+    z-index: 0;
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 8.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+	
+}
+.layers__title {
+	font-size: calc(var(--index) * 2.65);
+	letter-spacing: calc(var(--index) / 2.25);
+}
+.layers__caption {
+	font-size: calc(var(--index) / 1.175);
+	letter-spacing: calc(var(--index) / 3.5);
+	margin-top: calc(var(--index) * -.75);
+}
+.main-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 104vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	top: -2px;
+	z-index: 10;
+}
+
+
+
+.main-article::before {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(./img/wow-frame.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+	padding-top: 250px;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 10px #000000;
+	
+}
+.main-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+	text-shadow: 2px 2px 4px #000000;
+	
+}
+
+
+.content {
+	will-change: transform;
+}
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 0.5);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}
+
+.copy:hover {
+}
+
+
+.bottom-article {
+	height: 900px;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	top: -2px;
+	z-index: 0;
+	box-shadow: inset 0px 0px 80px black;
+	/* transform: translate3d(0, calc(var(--scrollTop) / -6), 0); */
+	animation: animation-sylv 2s infinite;
+    animation-direction: alternate;
+}
+
+
+
+
+.bottom-article__title {
+	transform: translate(0%, 0px);
+	opacity: 0;
+	transition: all 4.5s ease 1s;
+	font-size: 30px;
+	text-shadow: 2px 2px 4px #000000;
+	
+}
+
+.bottom-article__title._active {
+	transform: translate(0%, 100px);
+	opacity: 1;
+	
+}
+
+
+.bottom-article__paragraph {
+	transform: translate(0%, 100px);
+	opacity: 0;
+	transition: all 4.5s ease 3.0s;
+	font-size: 30px;
+	text-shadow: 2px 2px 4px #000000;
+	position:relative;
+}
+
+.bottom-article__paragraph._active {
+	transform: translate(0%, 100px);
+	opacity: 1;
+	font-size: 30px;
+}
+
+
+
+
+
+
+
+.fogwrapper {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	-webkit-filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+	filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+  }
+  #foglayer_01, #foglayer_02, #foglayer_03 {
+	height: 100%;
+	position: absolute;
+	width: 200%;
+	
+  }
+  #foglayer_01 .image01, #foglayer_01 .image02,
+  #foglayer_02 .image01, #foglayer_02 .image02,
+  #foglayer_03 .image01, #foglayer_03 .image02 {
+	float: left;
+	height: 100%;
+	width: 50%;
+	position: relative;
+	z-index:0;
+	
+  }
+  #foglayer_01 {
+	-webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+	-moz-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+	animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+  }
+  #foglayer_02, #foglayer_03 {
+	-webkit-animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+	-moz-animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+	animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+  }
+  
+  
+  /* ---------- Moving Fog ---------- */
+  /*
+	'size: cover' || 'size: 100%'; results remain the same
+	'attachment: scroll' can be added or removed; results remain the same
+	'attachment: fixed' causing unexpected results in Chrome
+	'repeat-x' || 'no-repeat'; results remain the same
+  */ 
+  #foglayer_01 .image01, #foglayer_01 .image02 {
+	background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png") center center/cover no-repeat transparent;
+  }
+  #foglayer_02 .image01, #foglayer_02 .image02,
+  #foglayer_03 .image01, #foglayer_03 .image02{
+	background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png") center center/cover no-repeat transparent;
+  }
+	

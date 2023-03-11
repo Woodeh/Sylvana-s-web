@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="keyframe.css">
+    <script src="/libs/gsap/gsap.min.js" defer></script>
+    <script src="/libs/gsap/ScrollTrigger.min.js"></script>
+    <script src="/libs/gsap/ScrollSmoother.min.js"></script>
+    <script src="/para-script.js" defer></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+
+            <header class="main-header">
+                <div class="layers">
+                    <div class="layer__header">
+                        <div class="layers__caption">Sylvanas Windrunner</div>
+                        <div class="layers__title">Vengeance is near</div>
+                    </div>
+                    <div class="layer layers__base" style="background-image: url(/img/back.png);"></div>
+                    <div class="layer layers__middle" style="background-image: url(/img/middle.png);"></div>
+                    <div class="layer layers__front" style="background-image: url(/img/front.png);"></div>
+                </div>
+            </header>
+
+            <article class="main-article" style="background-image: url(img/sylv-second.jpg);"> 
+                <div class="main-article__content">
+                    <h2 class="main-article__header">I was once a Farstrider</h2>
+                    <p class="main-article__paragraph">I swore an oath to defend Silvermoon and its people to my dying
+                        breath. It was not enough — my homeland still burned. But those days are long past, and history
+                        will NOT repeat itself! I am Sylvanas Windrunner, Queen of the Forsaken, and if you will not
+                        serve me in this life, then you will do so in the next!</p>
+                </div>
+            </article>
+
+            
+            <article class="bottom-article" ;>
+                <div id="foglayer_01" class="fog">
+                    <div class="image01"></div>
+                    <div class="image02"></div>
+                  </div>
+                  <div id="foglayer_02" class="fog">
+                    <div class="image01"></div>
+                    <div class="image02"></div>
+                  </div>
+                  <div id="foglayer_03" class="fog">
+                    <div class="image01"></div>
+                    <div class="image02"></div>
+                  </div>
+                <div class="bottom-article__content">
+                    
+                    <h2 class="bottom-article__title _anim-items">Oh, you're still here? </h2>
+                    <p class="bottom-article__paragraph _anim-items">I kind of hoped you had died. You'd make a very attractive corpse</p>
+                </div>
+                <div class="copy">© WD</div>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>
