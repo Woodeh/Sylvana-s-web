@@ -291,14 +291,17 @@ body {
 }
 
 .preloader__item {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    background-color: #f7400f;
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-    animation: preloader-bounce 2s infinite ease-in-out;
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	border-radius: 50%;
+	background: linear-gradient(225deg, #501212, #440f0f);
+	box-shadow: -20px 20px 56px #3f0e0e,
+		20px -20px 56px #571414;
+	border-radius: 100%;
+	width: 35px;
+	height: 35px;
+	animation: preloader-bounce 2s infinite ease-in-out;
 }
 
 .preloader__item:last-child {
